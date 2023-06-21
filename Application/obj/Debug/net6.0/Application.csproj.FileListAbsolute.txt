@@ -1,0 +1,15 @@
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\bin\Debug\net6.0\Application.deps.json
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\bin\Debug\net6.0\Application.dll
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\bin\Debug\net6.0\Application.pdb
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\bin\Debug\net6.0\Domain.dll
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\bin\Debug\net6.0\Domain.pdb
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\obj\Debug\net6.0\Application.csproj.AssemblyReference.cache
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\obj\Debug\net6.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\obj\Debug\net6.0\Application.AssemblyInfoInputs.cache
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\obj\Debug\net6.0\Application.AssemblyInfo.cs
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\obj\Debug\net6.0\Application.csproj.CoreCompileInputs.cache
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\obj\Debug\net6.0\Application.csproj.CopyComplete
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\obj\Debug\net6.0\Application.dll
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\obj\Debug\net6.0\refint\Application.dll
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\obj\Debug\net6.0\Application.pdb
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Application\obj\Debug\net6.0\ref\Application.dll

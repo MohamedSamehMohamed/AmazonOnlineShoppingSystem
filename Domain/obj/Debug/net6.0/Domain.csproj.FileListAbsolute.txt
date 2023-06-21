@@ -1,0 +1,12 @@
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\bin\Debug\net6.0\Domain.deps.json
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\bin\Debug\net6.0\Domain.dll
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\bin\Debug\net6.0\Domain.pdb
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.dll
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\refint\Domain.dll
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.pdb
+E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\ref\Domain.dll
