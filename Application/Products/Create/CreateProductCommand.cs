@@ -8,4 +8,4 @@ public record CreateProductCommand(
     string ImageUrl, 
     double Price, 
     int AvailableItemCount, 
-    int CategoryId): IRequest;
+    string CategoryId): IRequest;

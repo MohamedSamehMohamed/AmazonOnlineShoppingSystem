@@ -10,6 +10,7 @@ public class Product
         int availableItemCount,
         Category category)
     {
+        Id = Guid.NewGuid();
         Name = name;
         Description = description;
         ImageUrl = imageUrl;
@@ -18,12 +19,14 @@ public class Product
         Category = category;
     }
 
-    public int Id { get; set; }
-    public string Name { get; set; } = "";
-    public string Description { get; set; } = "";
-    public string ImageUrl { get; set; } = "";
+    public Guid Id { get; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public string ImageUrl { get; set; }
     public double Price { get; set; }
     public int AvailableItemCount { get; set; }
-    public Category Category { get; set; } = new();
+    public Guid CategoryId { get; set; }
+    public Category Category { get; set; }
+    
     public List<Review> Reviews { get; set; } = new();
 }

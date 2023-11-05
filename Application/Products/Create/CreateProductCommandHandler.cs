@@ -14,16 +14,17 @@ public class CreateProductCommandHandler: IRequestHandler<CreateProductCommand>
     
     public async Task Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
+        var category = await _unitOfWork.CategoryRepository.Get(request.CategoryId);
+        if (category == null) return;
         var product = new Product(
             request.Name, 
             request.Description, 
             request.ImageUrl, 
             request.Price, 
             request.AvailableItemCount,
-            new Category(request.CategoryId));
-        
-        _unitOfWork.ProductRepository.Add(product);
-
+            category
+            );
+        await  _unitOfWork.ProductRepository.AddAsync(product);
         await _unitOfWork.SaveChangeAsync();
     }
 }

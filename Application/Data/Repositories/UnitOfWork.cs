@@ -4,15 +4,18 @@ namespace Application.Data.Repositories;
 
 public class UnitOfWork: IUnitOfWork
 {
-    
+    private readonly ApplicationContext _context;
     public IProductRepository ProductRepository { get; }
+    public ICategoryRepository CategoryRepository { get; }
 
-    public UnitOfWork()
+    public UnitOfWork(ApplicationContext context)
     {
-        ProductRepository = new ProductRepositoryMock();
+        _context = context;
+        ProductRepository = new ProductRepository(_context);
+        CategoryRepository = new CategoryRepository(_context);
     }
     public async Task SaveChangeAsync()
     {
-        Console.WriteLine("save change");
+        await _context.SaveChangesAsync();
     }
 }

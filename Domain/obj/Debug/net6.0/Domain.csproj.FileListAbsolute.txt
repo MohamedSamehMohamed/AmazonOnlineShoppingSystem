@@ -10,3 +10,15 @@ E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6
 E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\refint\Domain.dll
 E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.pdb
 E:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\ref\Domain.dll
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\bin\Debug\net6.0\Domain.deps.json
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\bin\Debug\net6.0\Domain.dll
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\bin\Debug\net6.0\Domain.pdb
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.dll
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\refint\Domain.dll
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\Domain.pdb
+F:\ProgrammingLangueTraining\C#\AmazonOnlineShoppingSystem\Domain\obj\Debug\net6.0\ref\Domain.dll

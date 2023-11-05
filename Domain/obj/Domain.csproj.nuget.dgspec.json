@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj": {}
+    "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "E:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj": {
+    "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj",
+        "projectUniqueName": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "E:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj",
+        "projectPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\NOUR SOFT\\.nuget\\packages\\",
-        "outputPath": "E:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\obj\\",
+        "outputPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NOUR SOFT\\AppData\\Roaming\\NuGet\\NuGet.Config",

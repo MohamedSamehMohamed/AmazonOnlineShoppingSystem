@@ -4,9 +4,9 @@ namespace Domain.Orders;
 
 public class CartItem
 {
-    public List<Product> Products { get; set; } = new();
-    public int Quantity { get; set; }
-    public double TotalPrice { get; set; }
+    public List<Product> Products { get;} = new();
+    public int Quantity { get; private set; }
+    public double TotalPrice { get; private set; }
 
     public bool AddProduct(Product product)
     {

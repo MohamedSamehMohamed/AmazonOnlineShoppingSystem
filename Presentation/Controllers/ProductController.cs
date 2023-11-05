@@ -1,10 +1,15 @@
 using Application.Products.Create;
+using Infrastructure.Authentication;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Presentation.Controllers;
 
+
+//[HasPermission(Permissions.ReadMember)]
+[Authorize]
 [ApiController]
 [Route("[Controller]")]
 public class ProductController: ControllerBase 
