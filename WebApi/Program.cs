@@ -3,6 +3,7 @@ using Application;
 using Application.Common.Interfaces;
 using Application.Data;
 using Application.Data.MockRepositories;
+using Application.Data.Repositories;
 using Application.Products.Create;
 using Application.Services.Authentication;
 using Application.Services.IdentityAuthentication;
@@ -80,7 +81,7 @@ builder.Services.AddMediatR
     (cfg => cfg.RegisterServicesFromAssembly(typeof(CreateProductCommandHandler).Assembly));
 
 // add dependency injections 
-builder.Services.AddScoped<IUnitOfWork, MockUnitOfwork>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IIdentityAuthentication, IdentityAuthentication>();
 builder.Services.
     AddAuthentication(

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Z65mIk/b+aawHUn027sYhP/JWi+4qRk1KgovDz88LgGdezHqIkPN9Z1W1Ff/avbRg8aSoZVcY2PvoFhRoTahmw==",
+  "dgSpecHash": "l+BUEyoKtjwQN3gNBG5FNOWp3OhibzPPhydoT2t1/jJjo230XnJ1eYSBmY6Z3r2AlTVyOG6/BkQiCpokJJlbDw==",
   "success": true,
   "projectFilePath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\NOUR SOFT\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.3\\microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

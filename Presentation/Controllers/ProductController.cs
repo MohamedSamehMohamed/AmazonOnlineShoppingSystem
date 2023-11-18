@@ -1,4 +1,6 @@
+using System.Diagnostics;
 using Application.Products.Create;
+using Application.Products.Query;
 using Infrastructure.Authentication;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -23,14 +25,29 @@ public class ProductController: ControllerBase
     }
     
     [HttpPost]
-    public async Task<IActionResult> Product([FromBody] CreateProductCommand command)
+    public async Task<IActionResult> CreateProduct([FromBody] CreateProductCommand command)
     {
         try
         {
-            await _sender.Send(command);
-            return Ok();
+            var id = await _sender.Send(command);
+            return Ok(id);
         }
         catch (Exception e)
+        {
+            _logger.LogError(e, e.Message);
+            return BadRequest();
+        }
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetProduct([FromQuery] GetProductQuery query)
+    {
+        try
+        {
+            var product = await _sender.Send(query);
+            return product == null ? Ok("Not Found") : Ok(product);
+        }
+        catch(Exception e)
         {
             _logger.LogError(e, e.Message);
             return BadRequest();

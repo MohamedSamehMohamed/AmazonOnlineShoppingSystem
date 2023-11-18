@@ -7,5 +7,6 @@ public record CreateProductCommand(
     string Description, 
     string ImageUrl, 
     double Price, 
-    int AvailableItemCount, 
-    string CategoryId): IRequest;
+    int AvailableItemCount,
+    string OwnerId,
+    string CategoryId): IRequest<string>;

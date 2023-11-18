@@ -5,9 +5,19 @@ namespace Application.Data.MockRepositories;
 public class MockProductRepository: IProductRepository
 {
     private List<Product> _products = new List<Product>();
-    public async Task<Product?> Get(string productId)
+    public Task<bool> UpdateProduct(Product product)
     {
-        return _products.FirstOrDefault(product => product.Id.ToString() == productId);
+        throw new NotImplementedException();
+    }
+
+    public List<Product> GetProducts()
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<Product?> GetAsync(string productId)
+    {
+        return _products.FirstOrDefault(product => product.ProductId.ToString() == productId);
     }
 
     public async Task<bool> AddAsync(Product product)
@@ -18,7 +28,7 @@ public class MockProductRepository: IProductRepository
 
     public async Task<bool> DeleteAsync(string productId)
     {
-        var product = await Get(productId);
+        var product = await GetAsync(productId);
         if (product != null)
             _products.Remove(product);
         return true;

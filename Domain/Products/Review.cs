@@ -1,18 +1,13 @@
+using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+
 namespace Domain.Products;
 
+[PrimaryKey(nameof(UserId), nameof(ProductId))]
 public class Review
 {
-    public Review(Guid clientId, Guid productId, string comment, int rating)
-    {
-        ClientId = clientId;
-        ProductId = productId;
-        Comment = comment;
-        Rating = rating;
-    }
-
-    public Guid ClientId { get; set; }
-    public Guid ProductId { get; set; }
-    public Product Product { get; set; }
+    public string UserId { get; set; }
+    public string ProductId { get; set; }
     public string Comment { get; set; }
     public int Rating { get; set; }
 }
