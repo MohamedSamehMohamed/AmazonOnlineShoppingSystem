@@ -1,3 +1,4 @@
+using Domain.Orders;
 using Domain.Products;
 using Domain.Users;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -15,4 +16,5 @@ public class ApplicationContext: IdentityDbContext
     public DbSet<Category> Categories { get; set; }
     public DbSet<User> AuthenticatedUsers { get; set; }
     public DbSet<Admin> Admins { get; set; }
+    public DbSet<Order> Orders { get; set; }
 }

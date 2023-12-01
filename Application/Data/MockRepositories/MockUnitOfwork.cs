@@ -9,6 +9,9 @@ public class MockUnitOfwork : IUnitOfWork
     public ICategoryRepository CategoryRepository { get; } 
         = new MockCategoryRepository();
 
+    public IOrderRepository OrderRepository { get; }
+        = new MockOrderRepository();
+
     public async Task SaveChangeAsync()
     {
         Console.WriteLine("save in UOW");

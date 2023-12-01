@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "l+BUEyoKtjwQN3gNBG5FNOWp3OhibzPPhydoT2t1/jJjo230XnJ1eYSBmY6Z3r2AlTVyOG6/BkQiCpokJJlbDw==",
+  "dgSpecHash": "nzxt5k2mhTXDrKeyjmXooSTD4vUBFnXSjbWhylT211Af8BDvnR3i2PRA02R5zS6EJKAdKkXY9Xy/Kc6D5cfOKg==",
   "success": true,
-  "projectFilePath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj",
+  "projectFilePath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Domain/Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\NOUR SOFT\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.3\\microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512"
+    "/home/mohamedsameh/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.3/microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512",
+    "/home/mohamedsameh/.nuget/packages/microsoft.netcore.app.ref/6.0.25/microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "/home/mohamedsameh/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.25/microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
   ],
   "logs": []
 }
