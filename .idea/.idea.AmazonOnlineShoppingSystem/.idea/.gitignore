@@ -1,6 +1,8 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+# debug files 
+*/obj
 # Rider ignored files
 /modules.xml
 /.idea.AmazonOnlineShoppingSystem.iml
@@ -11,3 +13,4 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
