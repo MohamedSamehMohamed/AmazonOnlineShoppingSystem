@@ -1,36 +1,30 @@
 using Application.Authentication;
 using Application.Data;
 using Application.Services.Authentication;
+using Application.Users;
 using Domain.Users;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers;
 
 [ApiController]
+[Route("[Controller]")]
 public class RegisterUserController: ControllerBase
 {
-    private readonly IUnitOfWork _unitOfWork;
-    private readonly IAuthenticationService _authenticationService;
+    private readonly IMediator _sender;
 
-    public RegisterUserController(IUnitOfWork unitOfWork, IAuthenticationService authenticationService)
+    public RegisterUserController(IMediator sender)
     {
-        _unitOfWork = unitOfWork;
-        _authenticationService = authenticationService;
+        _sender = sender;
     }
 
     [HttpPost]
-    async Task<IActionResult> RegisterUser(UserRegistration userRegistration)
+    public async Task<IActionResult> RegisterUser([FromBody] UserRegistrationCommand userRegistrationCommand)
     {
-        var result = await _authenticationService.
-            Register(userRegistration.Email, userRegistration.Password);
-        if (!result.Succeeded)
-            return BadRequest(result.Errors);
-        var user = new User
-        {
-            Name = userRegistration.Name,
-            AuthenticationId = result.Id
-        };
-        _unitOfWork.AuthenticatedUser.AddAsync(user);
-        return Ok(user.UserId);
+        var registerResponse = await _sender.Send(userRegistrationCommand);
+        if (!registerResponse.Succeed)
+            return BadRequest(registerResponse.Errors);
+        return Ok(registerResponse);
     }
 }

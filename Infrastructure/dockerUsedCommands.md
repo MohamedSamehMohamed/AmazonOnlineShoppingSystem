@@ -15,5 +15,5 @@ docker stop sql_server_container
 
 # connection string 
 ``
-"Server=localhost,1433;Database=dataBaseName;User=sa;Password=YourPassword123;Encrypt=False;"
+"Server=localhost,1433;Database=AmazonShop;User=sa;Password=YourPassword123;Encrypt=False;"
 ``

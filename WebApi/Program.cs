@@ -4,9 +4,11 @@ using Application.Common.Interfaces;
 using Application.Data;
 using Application.Data.MockRepositories;
 using Application.Data.Repositories;
+using Application.Orders.Create;
 using Application.Products.Create;
 using Application.Services.Authentication;
 using Application.Services.IdentityAuthentication;
+using Application.Users;
 using Infrastructure.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -79,6 +81,10 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options=>
 // add mediator Handlers 
 builder.Services.AddMediatR
     (cfg => cfg.RegisterServicesFromAssembly(typeof(CreateProductCommandHandler).Assembly));
+builder.Services.AddMediatR
+    (cfg => cfg.RegisterServicesFromAssembly(typeof(CreateOrderCommandHandler).Assembly));
+builder.Services.AddMediatR
+    (cfg => cfg.RegisterServicesFromAssembly(typeof(UserRegistrationHandler).Assembly));
 
 // add dependency injections 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
