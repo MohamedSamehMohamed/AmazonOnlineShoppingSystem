@@ -26,7 +26,6 @@ public class AuthenticationController: ControllerBase
     {
         var result = await _authenticationService.Register(request.Email,request.Password);
         var response = _getResponse(result);
-        // TODO create user profile 
         return Ok(response);
     }
 

@@ -105,3 +105,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+
+// //Server=localhost,1433;Database=MyDatabase;User Id=sa;Password=thisIsSqlPassword123;

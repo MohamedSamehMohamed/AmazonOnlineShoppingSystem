@@ -12,6 +12,8 @@ public class MockUnitOfwork : IUnitOfWork
     public IOrderRepository OrderRepository { get; }
         = new MockOrderRepository();
 
+    public IAuthenticatedUser AuthenticatedUser { get; } = new MockAuthenticatedUser();
+
     public async Task SaveChangeAsync()
     {
         Console.WriteLine("save in UOW");

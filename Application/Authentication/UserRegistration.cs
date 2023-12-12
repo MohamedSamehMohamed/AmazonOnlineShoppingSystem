@@ -1,3 +1,3 @@
 namespace Application.Authentication;
 
-public record UserRegistration();
+public record UserRegistration(string Name, string Email, string Password);

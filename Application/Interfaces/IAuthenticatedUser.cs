@@ -1,6 +1,12 @@
+using Domain.Users;
+
 namespace Domain.Products;
 
-public class IAuthenticatedUser
+public interface IAuthenticatedUser
 {
-    
+    Task<bool> UpdateUser(User user);
+    List<User> GetUsers();
+    Task<User?> GetAsync(string userId);
+    Task<bool> AddAsync(User user);
+    Task<bool> DeleteAsync(string userId);
 }

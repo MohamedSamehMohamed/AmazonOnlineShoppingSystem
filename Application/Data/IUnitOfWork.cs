@@ -7,5 +7,6 @@ public interface IUnitOfWork
     public IProductRepository ProductRepository { get;}
     public ICategoryRepository CategoryRepository { get;}
     public IOrderRepository OrderRepository { get; }
+    public IAuthenticatedUser AuthenticatedUser { get; }
     Task SaveChangeAsync();
 }
