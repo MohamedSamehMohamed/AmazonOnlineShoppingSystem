@@ -1,3 +1,5 @@
-**/obj/
-**/Debug/
-**/bin/
+**/obj
+**/Debug
+**/bin
+**/Backup
+**/.vs
