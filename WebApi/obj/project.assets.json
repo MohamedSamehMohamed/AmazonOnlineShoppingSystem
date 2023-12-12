@@ -5060,19 +5060,19 @@
     ]
   },
   "packageFolders": {
-    "/home/mohamedsameh/.nuget/packages/": {}
+    "C:\\Users\\mohamedsameh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/WebApi/WebApi.csproj",
+      "projectUniqueName": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/WebApi/WebApi.csproj",
-      "packagesPath": "/home/mohamedsameh/.nuget/packages/",
-      "outputPath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/WebApi/obj/",
+      "projectPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\mohamedsameh\\.nuget\\packages\\",
+      "outputPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/mohamedsameh/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\mohamedsameh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -5084,14 +5084,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Application/Application.csproj": {
-              "projectPath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Application/Application.csproj"
+            "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Application\\Application.csproj": {
+              "projectPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Application\\Application.csproj"
             },
-            "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Infrastructure/Infrastructure.csproj": {
-              "projectPath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Infrastructure/Infrastructure.csproj"
+            "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Infrastructure\\Infrastructure.csproj"
             },
-            "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Presentation/Presentation.csproj": {
-              "projectPath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Presentation/Presentation.csproj"
+            "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Presentation\\Presentation.csproj": {
+              "projectPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Presentation\\Presentation.csproj"
             }
           }
         }
@@ -5152,7 +5152,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/mohamedsameh/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Domain/Domain.csproj": {}
+    "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Domain/Domain.csproj": {
+    "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Domain/Domain.csproj",
+        "projectUniqueName": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Domain/Domain.csproj",
-        "packagesPath": "/home/mohamedsameh/.nuget/packages/",
-        "outputPath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Domain/obj/",
+        "projectPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\mohamedsameh\\.nuget\\packages\\",
+        "outputPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/mohamedsameh/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\mohamedsameh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -62,6 +62,10 @@
             {
               "name": "Microsoft.NETCore.App.Ref",
               "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
             }
           ],
           "frameworkReferences": {
@@ -69,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/mohamedsameh/.dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

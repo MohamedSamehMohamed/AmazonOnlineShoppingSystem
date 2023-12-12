@@ -6549,19 +6549,19 @@
     ]
   },
   "packageFolders": {
-    "/home/mohamedsameh/.nuget/packages/": {}
+    "C:\\Users\\mohamedsameh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Presentation/Presentation.csproj",
+      "projectUniqueName": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Presentation\\Presentation.csproj",
       "projectName": "Presentation",
-      "projectPath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Presentation/Presentation.csproj",
-      "packagesPath": "/home/mohamedsameh/.nuget/packages/",
-      "outputPath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Presentation/obj/",
+      "projectPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Presentation\\Presentation.csproj",
+      "packagesPath": "C:\\Users\\mohamedsameh\\.nuget\\packages\\",
+      "outputPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/mohamedsameh/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\mohamedsameh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -6573,11 +6573,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Application/Application.csproj": {
-              "projectPath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Application/Application.csproj"
+            "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Application\\Application.csproj": {
+              "projectPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Application\\Application.csproj"
             },
-            "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Infrastructure/Infrastructure.csproj": {
-              "projectPath": "/mnt/second_ssd/ProgrammingLangueTraining/C#/AmazonOnlineShoppingSystem/Infrastructure/Infrastructure.csproj"
+            "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "F:\\ProgrammingLangueTraining\\C#\\AmazonOnlineShoppingSystem\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -6620,6 +6620,10 @@
           {
             "name": "Microsoft.NETCore.App.Ref",
             "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
           }
         ],
         "frameworkReferences": {
@@ -6627,7 +6631,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/mohamedsameh/.dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
