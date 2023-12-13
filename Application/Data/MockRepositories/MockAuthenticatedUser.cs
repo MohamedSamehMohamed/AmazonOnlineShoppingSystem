@@ -15,6 +15,11 @@ public class MockAuthenticatedUser: IAuthenticatedUser
         throw new NotImplementedException();
     }
 
+    public Task<string> GetUserIdByAuthenticationId(string authenticationId)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task<User?> GetAsync(string userId)
     {
         throw new NotImplementedException();

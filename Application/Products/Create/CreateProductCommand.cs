@@ -8,5 +8,5 @@ public record CreateProductCommand(
     string ImageUrl, 
     double Price, 
     int AvailableItemCount,
-    string OwnerId,
-    string CategoryId): IRequest<string>;
+    string CategoryId,
+    string CreatorId): IRequest<CreateProductResponse>;

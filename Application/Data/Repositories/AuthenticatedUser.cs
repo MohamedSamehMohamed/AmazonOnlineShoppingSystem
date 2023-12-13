@@ -24,6 +24,12 @@ public class AuthenticatedUser: IAuthenticatedUser
         return _context.AuthenticatedUsers.ToList();
     }
 
+    public async Task<string> GetUserIdByAuthenticationId(string authenticationId)
+    {
+        var user = await _context.AuthenticatedUsers.FirstOrDefaultAsync(user => user.AuthenticationId.Equals(authenticationId));
+        return user == null ? "" : user.UserId;
+    }
+
     public async Task<User?> GetAsync(string userId)
     {
         return await _context.AuthenticatedUsers.FirstOrDefaultAsync(user => user.UserId.Equals(userId));

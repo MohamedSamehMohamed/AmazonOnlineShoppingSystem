@@ -1,9 +1,12 @@
 using System.Diagnostics;
+using System.Security.Claims;
 using Application.Products.Create;
+using Application.Products.DTO;
 using Application.Products.Query;
 using Infrastructure.Authentication;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -25,12 +28,20 @@ public class ProductController: ControllerBase
     }
     
     [HttpPost]
-    public async Task<IActionResult> CreateProduct([FromBody] CreateProductCommand command)
+    public async Task<IActionResult> CreateProduct([FromBody] CreateProductDTO request)
     {
         try
         {
-            var id = await _sender.Send(command);
-            return Ok(id);
+            var authenticationId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var command = new CreateProductCommand(request.Name, request.Description, request.ImageUrl, request.Price,
+                request.AvailableItemCount, request.CategoryId, authenticationId);
+            
+            var response = await _sender.Send(command);
+            if (!response.Succeed)
+            {
+                return BadRequest(response.Errors);
+            }
+            return Ok(response);
         }
         catch (Exception e)
         {

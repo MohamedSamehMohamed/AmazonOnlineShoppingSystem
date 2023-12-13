@@ -6,7 +6,7 @@ namespace Application.Services.IdentityAuthentication;
 
 public class IdentityAuthentication: IIdentityAuthentication
 {
-    private UserManager<IdentityUser> _userManager;
+    private readonly UserManager<IdentityUser> _userManager;
 
     public IdentityAuthentication(UserManager<IdentityUser> userManager)
     {
