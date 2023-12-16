@@ -5,14 +5,14 @@ namespace Application.Data.MockRepositories;
 public class MockProductRepository: IProductRepository
 {
     private List<Product> _products = new List<Product>();
-    public Task<bool> UpdateProduct(Product product)
+    public async Task<bool> UpdateProduct(Product product)
     {
-        throw new NotImplementedException();
+        return true;
     }
 
     public List<Product> GetProducts()
     {
-        throw new NotImplementedException();
+        return _products;
     }
 
     public async Task<Product?> GetAsync(string productId)
@@ -33,5 +33,4 @@ public class MockProductRepository: IProductRepository
             _products.Remove(product);
         return true;
     }
-    
 }

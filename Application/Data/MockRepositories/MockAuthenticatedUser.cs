@@ -5,33 +5,41 @@ namespace Application.Data.MockRepositories;
 
 public class MockAuthenticatedUser: IAuthenticatedUser
 {
-    public Task<bool> UpdateUser(User user)
+    private List<User> _users = new();
+    public async Task<bool> UpdateUser(User user)
     {
-        throw new NotImplementedException();
+        return true;
     }
 
     public List<User> GetUsers()
     {
-        throw new NotImplementedException();
+        return _users;
     }
 
-    public Task<string> GetUserIdByAuthenticationId(string authenticationId)
+    public async Task<string> GetUserIdByAuthenticationId(string authenticationId)
     {
-        throw new NotImplementedException();
+        var user = _users.FirstOrDefault(user => user.AuthenticationId.Equals(authenticationId));
+        if (user == null)
+            return "";
+        return user.UserId;
     }
 
-    public Task<User?> GetAsync(string userId)
+    public async Task<User?> GetAsync(string userId)
     {
-        throw new NotImplementedException();
+        return _users.FirstOrDefault(user => user.UserId == userId);
     }
 
-    public Task<bool> AddAsync(User user)
+    public async Task<bool> AddAsync(User user)
     {
-        throw new NotImplementedException();
+        _users.Add(user);
+        return true;
     }
 
-    public Task<bool> DeleteAsync(string userId)
+    public async Task<bool> DeleteAsync(string userId)
     {
-        throw new NotImplementedException();
+        var user = await GetAsync(userId);
+        if (user == null) return false;
+        _users.Remove(user);
+        return true;
     }
 }
