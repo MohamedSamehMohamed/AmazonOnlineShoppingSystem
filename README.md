@@ -23,4 +23,16 @@ This can search for products, place or cancel orders, and add new products to se
 # Guest User  
 This can search for products.
 
+# finished Tasks 
+Authentication & Authorization 
+
+Register, Login User and JWT Token 
+
+add Product
+
+add order 
+
+
+
+
 
