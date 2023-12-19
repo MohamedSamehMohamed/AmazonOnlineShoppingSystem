@@ -24,6 +24,7 @@ public class CreateProductHandlerTests
         
         var handler = new CreateProductCommandHandler(_unitOfWork);
         var result = await handler.Handle(command, default);
+        
         result.Succeed.Should().BeFalse();
     }
 }
