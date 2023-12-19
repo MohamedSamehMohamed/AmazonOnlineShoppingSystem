@@ -4,24 +4,48 @@ using MediatR;
 
 namespace Application.Orders.Create;
 
-public class CreateOrderCommandHandler: IRequestHandler<CreateOrderCommand, string>
+public class CreateOrderCommandHandler: IRequestHandler<CreateOrderCommand, CreateOrderResponse>
 {
     private readonly IUnitOfWork _unitOfWork;
     public CreateOrderCommandHandler(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
     }
-    public async Task<string> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
+    public async Task<CreateOrderResponse> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
     {
-        var order = new Order
+        try
         {
-            UserId = request.UserId,
-            CartItems = request.CartItems,
-            TimeOfOrder = DateTime.Now,
-            PaymentMethod = request.PaymentMethod,
-            OrderStatus = request.OrderStatus
-        };
-        _unitOfWork.OrderRepository.AddOrder(order);
-        return order.OrderId;
+            var order = new Order
+            {
+                UserId = request.UserId,
+                TimeOfOrder = DateTime.Now,
+                PaymentMethod = request.PaymentMethod,
+                OrderStatus = request.OrderStatus
+            };
+            foreach (var cart in request.CartItems)
+            {
+                var product = await _unitOfWork.ProductRepository.GetAsync(cart.ProductId);
+                if (product == null)
+                    return new CreateOrderResponse("", false,
+                        new List<string>() { cart.ProductId + " product id not exist" });
+                if (product.AvailableItemCount < cart.Quantity)
+                    return new CreateOrderResponse("", false,
+                        new List<string>() { "no available quantity of product " + cart.ProductId });
+                // TODO get product Discount 
+                order.CartItems.Add(new CartItem(order.OrderId, product.ProductId,
+                    cart.Quantity, product.Price * cart.Quantity, 0.0));
+                product.AvailableItemCount -= cart.Quantity;
+            }
+
+            var addStatus = await _unitOfWork.OrderRepository.AddOrder(order);
+            if (!addStatus)
+                return new CreateOrderResponse("", false, new List<string>() { "add the order failed" });
+            await _unitOfWork.SaveChangeAsync();
+            return new CreateOrderResponse(order.OrderId, true, new List<string>());
+        }
+        catch (Exception exception)
+        {
+            return new CreateOrderResponse("", false, new List<string>() { "add the order failed" });
+        }
     }
 }

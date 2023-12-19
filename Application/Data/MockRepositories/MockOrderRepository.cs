@@ -20,7 +20,7 @@ public class MockOrderRepository: IOrderRepository
         return new Order();
     }
 
-    public bool AddOrder(Order order)
+    public Task<bool> AddOrder(Order order)
     {
         throw new NotImplementedException();
     }

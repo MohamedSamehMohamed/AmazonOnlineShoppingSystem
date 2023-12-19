@@ -62,7 +62,7 @@ public class ProductController: ControllerBase
         }
     }
     [HttpGet]
-    public async Task<IActionResult> GetProducts([FromQuery] GetProductQuery query)
+    public async Task<IActionResult> GetProducts([FromQuery] GetProductsQuery query)
     {
         try
         {

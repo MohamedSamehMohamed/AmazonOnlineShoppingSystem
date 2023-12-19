@@ -1,5 +1,6 @@
 using Domain.Orders;
 using Domain.Products;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Data.Repositories;
 
@@ -13,23 +14,31 @@ public class OrderRepository: IOrderRepository
     }
     public IList<Order> GetOrders()
     {
-        return _context.Orders.ToList();
+        return _context.Orders.Include(order=>order.CartItems).ToList();
     }
 
     public IList<Order> GetOrderByUser(string userId)
     {
-        return _context.Orders.Where(order => order.UserId.Equals(userId)).ToList();
+        return _context.Orders.Include(order=>order.CartItems).
+            Where(order => order.UserId.Equals(userId)).ToList();
     }
 
     public Order? GetOrder(string orderId)
     {
-        return _context.Orders.FirstOrDefault(order => order.OrderId.Equals(orderId));
+        return _context.Orders.Include(order=>order.CartItems).FirstOrDefault(order => order.OrderId.Equals(orderId));
     }
 
-    public bool AddOrder(Order order)
+    public async Task<bool> AddOrder(Order order)
     {
-        _context.Orders.Add(order);
-        return true;
+        try
+        {
+            await _context.Orders.AddAsync(order);
+            return true;
+        }
+        catch (Exception exception)
+        {
+            return false;
+        }
     }
 
     public bool RemoveOrder(string orderId)

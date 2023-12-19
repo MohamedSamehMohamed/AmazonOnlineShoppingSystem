@@ -18,12 +18,10 @@ public class OrderController: ControllerBase
 {
     private readonly IMediator _sender;
     private readonly ILogger<OrderController> _logger;
-    private readonly string _userId;
     public OrderController(IMediator sender, ILogger<OrderController> logger)
     {
         _sender = sender;
         _logger = logger;
-        _userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
     }
 
     [HttpGet]
@@ -31,7 +29,8 @@ public class OrderController: ControllerBase
     {
         try
         {
-            var query = new GetOrderByUserQuery(_userId, pageNumber);
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var query = new GetOrderByUserQuery(userId, pageNumber);
             var orders = await _sender.Send(query);
             return Ok(orders);
         }
@@ -62,8 +61,9 @@ public class OrderController: ControllerBase
     {
         try
         {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var command =
-                new CreateOrderCommand(_userId, request.CartItems, OrderStatus.InProcess, request.PaymentMethod);
+                new CreateOrderCommand(userId, request.CartItems, OrderStatus.InProcess, request.PaymentMethod);
             var orderId = await _sender.Send(command);
             return Ok(orderId);
         }

@@ -19,7 +19,7 @@ public enum PaymentMethod
 [PrimaryKey(nameof(OrderId))]
 public class Order
 {
-    public string OrderId { get; set; }
+    public string OrderId { get; set; } = Guid.NewGuid().ToString();
     public string UserId { get; set; }
     public List<CartItem> CartItems { get; set; } = new();
     public Decimal TotalPrice
