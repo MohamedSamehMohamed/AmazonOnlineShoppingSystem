@@ -87,6 +87,26 @@ namespace Application.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Domain.Products.Discount", b =>
+                {
+                    b.Property<string>("DiscountId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("DiscountPercent")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("DiscountId");
+
+                    b.HasIndex("ProductId")
+                        .IsUnique();
+
+                    b.ToTable("Discounts");
+                });
+
             modelBuilder.Entity("Domain.Products.Product", b =>
                 {
                     b.Property<string>("ProductId")
@@ -377,6 +397,17 @@ namespace Application.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Domain.Products.Discount", b =>
+                {
+                    b.HasOne("Domain.Products.Product", "Product")
+                        .WithOne("Discount")
+                        .HasForeignKey("Domain.Products.Discount", "ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Domain.Products.Product", b =>
                 {
                     b.HasOne("Domain.Products.Category", "Category")
@@ -447,6 +478,12 @@ namespace Application.Migrations
             modelBuilder.Entity("Domain.Products.Category", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Domain.Products.Product", b =>
+                {
+                    b.Navigation("Discount")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Users.User", b =>

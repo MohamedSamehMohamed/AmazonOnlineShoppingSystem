@@ -9,6 +9,7 @@ public class UnitOfWork: IUnitOfWork
     public ICategoryRepository CategoryRepository { get; }
     public IOrderRepository OrderRepository { get; }
     public IAuthenticatedUser AuthenticatedUser { get; }
+    public IDiscount DiscountRepository { get; }
 
     public UnitOfWork(ApplicationContext context)
     {
@@ -17,6 +18,7 @@ public class UnitOfWork: IUnitOfWork
         CategoryRepository = new CategoryRepository(_context);
         OrderRepository = new OrderRepository(_context);
         AuthenticatedUser = new AuthenticatedUser(_context);
+        DiscountRepository = new DiscountRepository(_context);
     }
     public async Task SaveChangeAsync()
     {
