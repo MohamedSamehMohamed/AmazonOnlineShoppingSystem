@@ -25,7 +25,7 @@ public class ProductRepository: IProductRepository
         return true;
     }
 
-    public List<Product> GetProducts()
+    public async Task<List<Product>> GetProducts()
     {
         return _context.Products.ToList();
     }
