@@ -36,4 +36,21 @@ public class JwtTokenGenerator: IJwtTokenGenerator
         var token = new JwtSecurityTokenHandler().WriteToken(securityToken);
         return new JwtResponse(true, token, securityToken.ValidTo, new List<string>());
     }
+
+    public JwtResponse GenerateToken(IEnumerable<Claim> claims)
+    {
+        var signingCredentials = new SigningCredentials(
+            new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret)),
+            SecurityAlgorithms.HmacSha256
+        );
+        
+        var securityToken = new JwtSecurityToken(
+            issuer: _jwtSettings.Issuer,
+            audience:_jwtSettings.Audience,
+            claims: claims,
+            expires:DateTime.UtcNow.AddMinutes(_jwtSettings.ExpiryMinutes),
+            signingCredentials: signingCredentials);
+        var token = new JwtSecurityTokenHandler().WriteToken(securityToken);
+        return new JwtResponse(true, token, securityToken.ValidTo, new List<string>());
+    }
 }

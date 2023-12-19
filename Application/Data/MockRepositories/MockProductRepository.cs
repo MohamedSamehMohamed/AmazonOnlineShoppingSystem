@@ -10,7 +10,7 @@ public class MockProductRepository: IProductRepository
         return true;
     }
 
-    public List<Product> GetProducts()
+    public async Task<List<Product>> GetProducts()
     {
         return _products;
     }

@@ -18,10 +18,6 @@ public class CreateProductCommandHandler: IRequestHandler<CreateProductCommand, 
         if (category == null) 
             return new CreateProductResponse("", false, 
                 new List<string>(){"Category not found"});
-        var userId = await _unitOfWork.AuthenticatedUser.GetUserIdByAuthenticationId(request.CreatorId);
-        if (userId == "")
-            return new CreateProductResponse("", false, 
-                new List<string>(){"User Not Found"});
         
         var product = new Product
         {
@@ -31,7 +27,7 @@ public class CreateProductCommandHandler: IRequestHandler<CreateProductCommand, 
             Price = request.Price,
             AvailableItemCount = request.AvailableItemCount,
             CategoryId = request.CategoryId,
-            ProductOwner = userId
+            ProductOwner = request.CreatorId
         };
         if (!await _unitOfWork.ProductRepository.AddAsync(product))
         {

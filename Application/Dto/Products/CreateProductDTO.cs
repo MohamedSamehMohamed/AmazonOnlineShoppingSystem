@@ -1,4 +1,4 @@
-namespace Application.Products.DTO;
+namespace Application.Dto.Products;
 
 public record CreateProductDTO(
     string Name, 
