@@ -3,4 +3,4 @@ using MediatR;
 
 namespace Application.Orders.Query;
 
-public record GetOrderByUserQuery(string UserId): IRequest<IList<Order>>;
+public record GetOrderByUserQuery(string UserId, int PageNumber): IRequest<IList<Order>>;
