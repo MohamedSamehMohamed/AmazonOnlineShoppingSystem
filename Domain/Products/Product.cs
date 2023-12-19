@@ -14,5 +14,6 @@ public class Product
     public int AvailableItemCount { get; set; }
     public string CategoryId { get; set; }
     public Category Category { get; set; }
+    public Discount Discount { get; set; }
     
 }

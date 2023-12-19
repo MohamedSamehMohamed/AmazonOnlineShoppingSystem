@@ -13,6 +13,7 @@ public class MockUnitOfwork : IUnitOfWork
         = new MockOrderRepository();
 
     public IAuthenticatedUser AuthenticatedUser { get; } = new MockAuthenticatedUser();
+    public IDiscount DiscountRepository { get; }
 
     public async Task SaveChangeAsync()
     {

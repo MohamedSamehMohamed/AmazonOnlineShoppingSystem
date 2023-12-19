@@ -8,5 +8,6 @@ public interface IUnitOfWork
     public ICategoryRepository CategoryRepository { get;}
     public IOrderRepository OrderRepository { get; }
     public IAuthenticatedUser AuthenticatedUser { get; }
+    public IDiscount DiscountRepository { get; }
     Task SaveChangeAsync();
 }
