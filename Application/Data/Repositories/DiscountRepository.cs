@@ -11,52 +11,24 @@ public class DiscountRepository: IDiscount
         _context = context;
     }
 
-    public Discount Get(string productId)
+    public Discount? Get(string productId)
     {
-        return _context.Discounts.FirstOrDefault(discount => discount.ProductId.Equals(productId));
+        return _context.Discounts.FirstOrDefault(discount => discount.ProductId.Equals(productId) && 
+                                                             discount.StartDate >= DateTime.Now && 
+                                                             (discount.EndDate == null || discount.EndDate < DateTime.Now));
     }
 
-    public bool Add(Discount newDiscount)
+    public void Add(Discount newDiscount)
     {
-        try
-        {
-            var oldDiscount = Get(newDiscount.ProductId);
-            if (oldDiscount == null)
-            {
-                _context.Discounts.Add(newDiscount);
-            }
-            else
-            {
-                oldDiscount.DiscountPercent = newDiscount.DiscountPercent;
-            }
-
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
+        _context.Discounts.Add(newDiscount);
     }
 
-    public bool Remove(string productId)
+    public void Invalidate(string productId)
     {
-        try
+        var discount = Get(productId);
+        if (discount != null)
         {
-            var discount = Get(productId);
-            if (discount != null)
-            {
-                _context.Discounts.Remove(discount);
-            }
-            return true;
+            discount.EndDate = DateTime.Now;
         }
-        catch
-        {
-            return false;
-        }
-    }
-
-    public bool Update(Discount newDiscount)
-    {
-        return Add(newDiscount);
     }
 }

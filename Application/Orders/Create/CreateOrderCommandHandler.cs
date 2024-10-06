@@ -31,8 +31,8 @@ public class CreateOrderCommandHandler: IRequestHandler<CreateOrderCommand, Crea
                 if (product.AvailableItemCount < cart.Quantity)
                     return new CreateOrderResponse("", false,
                         new List<string>() { "no available quantity of product " + cart.ProductId });
-                var discount = _unitOfWork.DiscountRepository.Get(product.ProductId) ;
-                var discountValue = discount == null ? 0.0 : discount.DiscountPercent; 
+                var discount = _unitOfWork.DiscountRepository.Get(product.ProductId);
+                var discountValue = discount?.DiscountPercent?? 0.0;
                 order.CartItems.Add(new CartItem(order.OrderId, product.ProductId,
                     cart.Quantity, product.Price * cart.Quantity, discountValue));
                 product.AvailableItemCount -= cart.Quantity;

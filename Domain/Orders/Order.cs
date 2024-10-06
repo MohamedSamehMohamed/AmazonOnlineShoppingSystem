@@ -26,12 +26,7 @@ public class Order
     {
         get
         {
-            var total = 0.0;
-            foreach (var cart in CartItems)
-            {
-                total += cart.TotalPriceWithoutDiscount * (1 - cart.Discount);
-            }
-            
+            var total = CartItems.Sum(cart => cart.TotalPriceWithoutDiscount * (1 - cart.Discount));
             return Convert.ToDecimal(total);
         }
     }
