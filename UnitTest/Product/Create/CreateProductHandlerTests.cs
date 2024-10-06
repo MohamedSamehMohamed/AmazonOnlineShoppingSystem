@@ -7,7 +7,7 @@ using FluentAssertions;
 using Moq;
 
 
-namespace ProjectTest.Product.Create;
+namespace UnitTest.Product.Create;
 
 public class CreateProductHandlerTests
 {
