@@ -2,6 +2,7 @@ using System.Security.Claims;
 using Application.Products.Create;
 using Application.Dto.Products;
 using Application.Products.Query;
+using Infrastructure.Authentication;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +11,7 @@ using Microsoft.Extensions.Logging;
 namespace Presentation.Controllers;
 
 
-//[HasPermission(Permissions.ReadMember)]
+[HasPermission(Permissions.ReadMember)]
 [ApiController]
 [Route("[Controller]/[action]")]
 public class ProductController: ControllerBase 
@@ -25,13 +26,14 @@ public class ProductController: ControllerBase
     
     [HttpPost]
     [Authorize]
-    public async Task<IActionResult> CreateProduct([FromBody] CreateProductDTO request)
+    public async Task<IActionResult> CreateProduct([FromBody] CreateProductDto request)
     {
         try
         {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var userId = User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            this.ThrowIfNull(userId, nameof(userId));
             var command = new CreateProductCommand(request.Name, request.Description, request.ImageUrl, request.Price,
-                request.AvailableItemCount, request.CategoryId, userId);
+                request.AvailableItemCount, request.CategoryId, userId!);
             
             var response = await _sender.Send(command);
             if (!response.Succeed)
@@ -74,5 +76,12 @@ public class ProductController: ControllerBase
             _logger.LogError(e, e.Message);
             return BadRequest(e.Message);
         }
+    }
+
+    private void ThrowIfNull(object? obj, string paramName)
+    {
+        if (obj != null) return;
+        _logger.LogError($"paramName: {paramName} is null");
+        throw new ArgumentNullException(paramName);
     }
 }

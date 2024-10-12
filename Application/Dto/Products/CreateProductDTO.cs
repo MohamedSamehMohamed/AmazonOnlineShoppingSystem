@@ -1,6 +1,6 @@
 namespace Application.Dto.Products;
 
-public record CreateProductDTO(
+public record CreateProductDto(
     string Name, 
     string Description, 
     string ImageUrl, 
