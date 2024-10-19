@@ -35,17 +35,9 @@ public class ProductRepository: IProductRepository
         return await _context.Products.
             FirstOrDefaultAsync(product => product.ProductId.Equals(productId));
     }
-    public async Task<bool> AddAsync(Product product)
+    public async Task AddAsync(Product product)
     {
-        try
-        {
-            await _context.Products.AddAsync(product);
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
+        await _context.Products.AddAsync(product);
     }
     public async Task<bool> DeleteAsync(string productId)
     {

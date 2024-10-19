@@ -7,6 +7,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace Presentation.Controllers;
 
@@ -14,7 +15,7 @@ namespace Presentation.Controllers;
 [HasPermission(Permissions.ReadMember)]
 [ApiController]
 [Route("[Controller]/[action]")]
-public class ProductController: ControllerBase 
+public class ProductController: ControllerBase
 {
     private readonly IMediator _sender;
     private readonly ILogger<ProductController> _logger;
@@ -34,12 +35,9 @@ public class ProductController: ControllerBase
             this.ThrowIfNull(userId, nameof(userId));
             var command = new CreateProductCommand(request.Name, request.Description, request.ImageUrl, request.Price,
                 request.AvailableItemCount, request.CategoryId, userId!);
-            
+            _logger.LogInformation($"Command for adding new product: {JsonConvert.SerializeObject(command)}");
             var response = await _sender.Send(command);
-            if (!response.Succeed)
-            {
-                return BadRequest(response.Errors);
-            }
+            _logger.LogInformation($"Response for Adding new Product: {JsonConvert.SerializeObject(response)}");
             return Ok(response);
         }
         catch (Exception e)

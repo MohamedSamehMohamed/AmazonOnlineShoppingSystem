@@ -14,27 +14,30 @@ public class CreateProductCommandHandler: IRequestHandler<CreateProductCommand, 
     }
     public async Task<CreateProductResponse> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
-        var category = await _unitOfWork.CategoryRepository.Get(request.CategoryId);
-        if (category == null) 
-            return new CreateProductResponse("", false, 
-                new List<string>(){"Category not found"});
-        
-        var product = new Product
+        try
         {
-            Name = request.Name,
-            Description = request.Description,
-            ImageUrl = request.ImageUrl,
-            Price = request.Price,
-            AvailableItemCount = request.AvailableItemCount,
-            CategoryId = request.CategoryId,
-            ProductOwner = request.CreatorId
-        };
-        if (!await _unitOfWork.ProductRepository.AddAsync(product))
-        {
-            return new CreateProductResponse("", false, 
-                new List<string>(){"Un able to add the product"});
+            var category = await _unitOfWork.CategoryRepository.Get(request.CategoryId);
+            if (category == null)
+                return Dto.NotFoundCategory(request.CategoryId);
+            
+            var product = new Product
+            {
+                Name = request.Name,
+                Description = request.Description,
+                ImageUrl = request.ImageUrl,
+                Price = request.Price,
+                AvailableItemCount = request.AvailableItemCount,
+                CategoryId = request.CategoryId,
+                ProductOwner = request.CreatorId
+            };
+            await _unitOfWork.ProductRepository.AddAsync(product);
+            await _unitOfWork.SaveChangeAsync();
+            return new CreateProductResponse(product.ProductId, true, new List<string>());
+
         }
-        await _unitOfWork.SaveChangeAsync();
-        return new CreateProductResponse(product.ProductId, true, new List<string>());
+        catch (Exception exception)
+        {
+            return Dto.FailedToAddProduct(exception.Message);
+        }
     }
 }

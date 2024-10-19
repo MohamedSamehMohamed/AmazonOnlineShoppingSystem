@@ -20,10 +20,9 @@ public class MockProductRepository: IProductRepository
         return _products.FirstOrDefault(product => product.ProductId.ToString() == productId);
     }
 
-    public async Task<bool> AddAsync(Product product)
+    public async Task AddAsync(Product product)
     {
         _products.Add(product);
-        return true;
     }
 
     public async Task<bool> DeleteAsync(string productId)
